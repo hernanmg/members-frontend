@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">
+    <h1>{{ 'main.text' | translate }}</h1>
+  </div>
+  <div class="card-body">
+    <div class="contenedor-botones">
+      <!-- <button [ngClass]="{'active': activeLang == 'es'}" (click)="switchLanguage('es')">Español</button>
+      <button [ngClass]="{'active': activeLang == 'en'}" (click)="switchLanguage('en')">English</button>
+      <button [ngClass]="{'active': activeLang == 'pt'}" (click)="switchLanguage('pt')">Portugués</button> -->
+      <span class="form-inline">
+        <select class="form-control" #selectedLang (change)="switchLanguage(selectedLang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language"
+            [selected]="language === translate.currentLang">
+            {{ language }}
+          </option>
+        </select>
+      </span>
+    </div>
+  </div>
+</div>
